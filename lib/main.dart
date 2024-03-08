@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -106,11 +108,12 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'Contador:',
+              style: TextStyle(fontStyle: FontStyle.italic, fontSize: 17),
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: const TextStyle(fontStyle: FontStyle.italic, fontSize: 40),
             ),
           ],
         ),
