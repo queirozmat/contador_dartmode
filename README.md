@@ -10,7 +10,7 @@ Foram utilizados os mais diversos comandos git, assim como também trabalhamos a
 
 ## Visualização
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Screenshot_1710172714](https://github.com/queirozmat/contador_dartmode/assets/82989763/0fd9837c-f6b3-45dc-a2b5-af7654c5812e)
 
 ## Inicializando
 
@@ -22,7 +22,7 @@ Clone o repositório digitando o código abaixo no seu terminal
 ```
 Depois disso é só rodar o projeto.
 
-Outra opção é apenas baixar o APK do projeto, clicando neste [link](https://linkaqui).
+Outra opção é apenas baixar o APK do projeto, clicando neste [link](https://drive.google.com/file/d/12rBlOsCNsO08hSNbwdelNwmzlEBFSW7_/view?usp=drive_link).
 
 ## Autores
 
