@@ -4,7 +4,7 @@
 Este projeto faz parte da grade curricular do curso Desenvolve oferecido pelo Grupo Boticário & escola Koru. 
 
 ## Aprendizados
-Os objetivos aqui presente se baseia no desenvolvimento de um projeto simples (contador de clicks), utilização do Git e GitHub e trabalho em grupo com resoluções de conflitos.
+Os objetivos aqui presentes se baseiam no desenvolvimento de um projeto simples (contador de cliques), utilização do Git e GitHub, e trabalho em grupo com resoluções de conflitos.
 
 Foram utilizados os mais diversos comandos git, assim como também trabalhamos a criação de branches e o code review durante todo o desenvolvimento do projeto
 
@@ -26,7 +26,7 @@ Outra opção é apenas baixar o APK do projeto, clicando neste [link](https://d
 
 ## Autores
 
-- [Dayane Stefane](hhttps://github.com/Dayane99)
+- [Dayane Stefane](https://github.com/Dayane99)
 - [Everton](https://github.com/Evertonaugustoet)
 - [Fabio Reis](https://github.com/fabiorpaz)
 - [Jair Carvalho](https://github.com/jairrcarvalho)
