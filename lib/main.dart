@@ -12,7 +12,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.grey),
+        buttonTheme: const ButtonThemeData(buttonColor: Colors.grey),
+        floatingActionButtonTheme:
+            FloatingActionButtonThemeData(backgroundColor: Colors.grey[350]),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Contador - Dartmode'),
@@ -38,13 +41,13 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 58, 154, 183),
+        backgroundColor: Colors.black,
+        foregroundColor: Colors.white,
         title: Text(widget.title),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-
           children: <Widget>[
             const Text(
               'Resultado:',
