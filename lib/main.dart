@@ -56,7 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
     for (var i = 1; i <= number; i++) {
       factorial *= BigInt.from(i);
     }
-    return ('Fatorial de $number: $factorial');
+    resultado = ('Fatorial de $number: $factorial');
+    return resultado;
   }
 
   String desafio4() {
@@ -86,7 +87,8 @@ class _MyHomePageState extends State<MyHomePage> {
         }
       }
     }
-    return 'Saída: ${valores.toString()}';
+    resultado = 'Saída: ${valores.toString()}';
+    return resultado;
   }
 
   String desafio9() {
@@ -122,7 +124,8 @@ class _MyHomePageState extends State<MyHomePage> {
         max = numero;
       }
     }
-    return 'Menor número: $min. Maior número: $max';
+    resultado = 'Menor número: $min. Maior número: $max';
+    return resultado;
   }
 
   String desafio15() {
