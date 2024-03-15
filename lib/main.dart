@@ -35,7 +35,84 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   String resultado = '';
 
-  void _incrementCounter() {}
+  //Parametros talvez vão ser implementados
+  String desafio1() {
+    //Conteudo da função
+
+    return ''; //Retorne sempre string
+  }
+
+  String desafio2() {
+    return '';
+  }
+
+  String desafio3() {
+    return '';
+  }
+
+  String desafio4() {
+    return '';
+  }
+
+  String desafio5() {
+    return '';
+  }
+
+  String desafio6() {
+    return '';
+  }
+
+  String desafio7() {
+    return '';
+  }
+
+  String desafio8() {
+    return '';
+  }
+
+  String desafio9() {
+    return '';
+  }
+
+  String desafio10() {
+    return '';
+  }
+
+  String desafio11() {
+    return '';
+  }
+
+  String desafio12() {
+    return '';
+  }
+
+  String desafio13() {
+    return '';
+  }
+
+  String desafio14() {
+    return '';
+  }
+
+  String desafio15() {
+    return '';
+  }
+
+  String desafio16() {
+    return '';
+  }
+
+  String desafio17() {
+    return '';
+  }
+
+  String desafio18() {
+    return '';
+  }
+
+  String desafio19() {
+    return '';
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,9 +139,9 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          _incrementCounter();
+          //Aqui vai chamar função
         },
-        tooltip: 'Incremento',
+        tooltip: 'Incrementar',
         child: const Icon(Icons.add_circle_sharp),
       ),
     );
