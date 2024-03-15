@@ -59,9 +59,13 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String desafio6() {
-    return '';
-  }
+    int numero = 10;
+    int antecessor = numero - 1;
+    int sucessor = numero + 1;
+    String resultado =("O antecessor é  de $numero é $antecessor e o sucessor é $sucessor");
 
+    return resultado;
+  }
   String desafio7() {
     return '';
   }
@@ -79,7 +83,15 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String desafio11() {
-    return '';
+    int numero = 10;
+    var tabuada = [];
+
+    for (int i = 1; i <= 10; i++) {
+      tabuada.add(numero * i);
+    }
+    String resultado = "A tabuada de $numero é: \n $tabuada";
+
+    return resultado;
   }
 
   String desafio12() {
