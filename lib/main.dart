@@ -51,7 +51,25 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String desafio4() {
-    return '';
+    int a = -5;
+    String resultado = "";
+
+    if (a % 2 == 0) {
+      resultado = '$a é um número par, ';
+    } else {
+      resultado = '$a é um número é impar, ';
+    }
+
+    if (a > 0) {
+      resultado += "o número é positivo.";
+    }
+    if (a < 0) {
+      resultado += 'o número é negativo';
+    }
+    if (a == 0) {
+      resultado += "o número é zero";
+    }
+    return resultado;
   }
 
   String desafio5() {
@@ -95,7 +113,20 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String desafio15() {
-    return '';
+    int limite = -3;
+    List<int> lista = [];
+
+    if (limite > 0) {
+      for (int i = 0; i <= limite;) {
+        lista.add(i++);
+      }
+    } else if (limite < 0) {
+      for (int i = 0; i >= limite;) {
+        lista.add(i--);
+      }
+    }
+
+    return lista.toString();
   }
 
   String desafio16() {
