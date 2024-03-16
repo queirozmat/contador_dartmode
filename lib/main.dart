@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:remove_diacritic/remove_diacritic.dart';
 
 void main() {
   runApp(const MyApp());
@@ -102,7 +103,26 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String desafio5() {
-    return '';
+    var numeros_iguais = false;
+
+    int compara_numeros(a, b) {
+      if (a == b) {
+        numeros_iguais = true;
+        return a + b;
+      } else {
+        return a * b;
+      }
+    }
+
+    var resultado = compara_numeros(3, 2);
+
+    if (numeros_iguais) {
+      return "Os números eram iguais, portanto você fez uma soma, o resultado é: " +
+          resultado.toString();
+    } else {
+      return "Os números eram diferente, portanto você fez uma multiplicação, o resultado é: " +
+          resultado.toString();
+    }
   }
 
   String desafio6() {
@@ -114,7 +134,17 @@ class _MyHomePageState extends State<MyHomePage> {
     return resultado;
   }
   String desafio7() {
-    return '';
+    int salario_min = 1412;
+    double salario_usuario = 3690.50;
+
+    double compara_salario(usuario, minimo) {
+      return usuario / minimo;
+    }
+
+    var resultado_formatado =
+        compara_salario(salario_usuario, salario_min).toStringAsFixed(2);
+
+    return "Com base em um salário mínimo de R\$ ${salario_min}, um usuário que recebe R\$ ${salario_usuario} logo ele recebe ${resultado_formatado} salários mínimos";
   }
 
   String desafio8() {
@@ -235,8 +265,76 @@ class _MyHomePageState extends State<MyHomePage> {
     return lista.toString();
   }
 
+  String normalize(String str) {
+    str = removeDiacritics(str);
+    str = str.replaceAll(" ", '');
+    str = str.toLowerCase();
+    str = str.replaceAll(RegExp(r'[^a-z]'), '');
+    return str;
+  }
+
+  bool is_even(String str) {
+    if (str.length % 2 == 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  bool is_palindrome(String str) {
+    str = normalize(str);
+    int last_index = str.length - 1;
+
+    if (is_even(str)) {
+      for (var i = 0; i < str.length / 2; i++) {
+        if (str[i] != str[last_index]) {
+          return false;
+        } else {
+          last_index--;
+        }
+      }
+
+      return true;
+    } else {
+      for (var i = 0; i < str.length ~/ 2; i++) {
+        if (str[i] != str[last_index]) {
+          return false;
+        } else {
+          last_index--;
+        }
+      }
+
+      return true;
+    }
+  }
+
   String desafio16() {
-    return '';
+    var tests = [
+      'Ana',
+      'ABBA',
+      'Anotaram a data da maratona',
+      'Anotaram a data 20/12 da maratona',
+      'Caneco',
+      'Xucrinho',
+      'A Rita sobre vovô verbos atira',
+      'Uma frase',
+      'Se hidrate',
+    ];
+
+    List<String> resultados = [];
+
+    for (var i = 0; i < tests.length; i++) {
+      String teste = "";
+      bool isPalindrome = is_palindrome(tests[i]);
+
+      if (isPalindrome) {
+        teste = "${tests[i]} é um palindromo ";
+      } else {
+        teste = "${tests[i]} não é um palindromo ";
+      }
+      resultados.add(teste);
+    }
+    return resultados.toString();
   }
 
   String desafio17() {
