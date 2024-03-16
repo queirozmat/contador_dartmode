@@ -74,27 +74,26 @@ class _MyHomePageState extends State<MyHomePage> {
     return '';
   }
 
-  void _desafio10(String nome, int idade) {
-    setState(() {
-      if (idade >= 18) {
-        resultado = '$nome é maior de idade';
-      } else {
-        resultado = '$nome é menor de idade';
-      }
-    });
+  String _desafio10() {
+    String nome = 'Wilmar';
+    int idade = 3;
+    if (idade >= 18) {
+      return '$nome é maior de idade';
+    } else {
+      return '$nome é menor de idade';
+    }
   }
 
   String desafio11() {
     return '';
   }
 
-  void _desafio12(List<int> numeros) {
-    setState(() {
-      for (int i = 0; i < numeros.length; i++) {
-        numeros[i] = numeros[i] * numeros[i];
-      }
-      resultado = numeros.join(',');
-    });
+  String _desafio12() {
+    List<int> numeros = [1, 2, 3];
+    for (int i = 0; i < numeros.length; i++) {
+      numeros[i] = numeros[i] * numeros[i];
+    }
+    return numeros.join(',');
   }
 
   String desafio13() {
@@ -200,9 +199,10 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           //Aqui vai chamar função
-          //_desafio10('Wilmar', 50);
-          //_desafio12([1, 2, 3]);
-          /* _d19listaStrings([
+          setState(() {
+            //resultado = _desafio10();
+            //resultado = _desafio12();
+            /* _d19listaStrings([
             'foR',
             'scream',
             'CaRs',
@@ -212,6 +212,7 @@ class _MyHomePageState extends State<MyHomePage> {
             'scar',
             'four'
           ]); */
+          });
         },
         tooltip: 'Incrementar',
         child: const Icon(Icons.add_circle_sharp),
