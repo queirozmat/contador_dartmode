@@ -66,7 +66,17 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String desafio3() {
-    return '';
+    var number = 5;
+    if (number < 0) {
+      return ("Não existe fatorial de número negativo!");
+    }
+    var factorial = BigInt.one;
+
+    for (var i = 1; i <= number; i++) {
+      factorial *= BigInt.from(i);
+    }
+    resultado = ('Fatorial de $number: $factorial');
+    return resultado;
   }
 
   String desafio4() {
@@ -90,7 +100,18 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String desafio8() {
-    return '';
+    List<int> valores = [5, 6, 1];
+    for (var i = 0; i < valores.length; i++) {
+      for (var j = i + 1; j < valores.length; j++) {
+        if (valores[i] < valores[j]) {
+          var temp = valores[i];
+          valores[i] = valores[j];
+          valores[j] = temp;
+        }
+      }
+    }
+    resultado = 'Saída: ${valores.toString()}';
+    return resultado;
   }
 
   String desafio9() {
@@ -140,7 +161,20 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String desafio14() {
-    return '';
+    List<int> numeros = [20, 1, 5, 23, 12, 8, 15, 10, 7, 18];
+    int min = numeros[0];
+    int max = numeros[0];
+
+    for (var numero in numeros) {
+      if (numero < min) {
+        min = numero;
+      }
+      if (numero > max) {
+        max = numero;
+      }
+    }
+    resultado = 'Menor número: $min. Maior número: $max';
+    return resultado;
   }
 
   String desafio15() {
