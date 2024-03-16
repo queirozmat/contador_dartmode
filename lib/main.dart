@@ -37,13 +37,32 @@ class _MyHomePageState extends State<MyHomePage> {
 
   //Parametros talvez vão ser implementados
   String desafio1() {
-    //Conteudo da função
+    int a = 15;
+    int b = 8;
 
-    return ''; //Retorne sempre string
+    if (a > b) {
+      return 'O maior valor é: $a';
+    } else if (b > a) {
+      return 'O maior valor é: $b';
+    } else {
+      return 'Os valores são iguais: $a';
+    }
   }
 
   String desafio2() {
-    return '';
+    int a = 8;
+    int b = 5;
+    int c = 27;
+
+    int soma = a + b;
+
+    if (soma > c) {
+      return 'A soma de a: $a e b: $b é $soma e é maior do que $c.';
+    } else if (soma < c) {
+      return 'A soma de a: $a e b: $b é $soma e é menor do que $c.';
+    } else {
+      return 'A soma de $a e $b é igual a $c.';
+    }
   }
 
   String desafio3() {
