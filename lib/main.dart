@@ -71,7 +71,25 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String desafio9() {
-    return '';
+    List listaDeNotas = [80, 70, 60, 75, 40];
+
+    num totalNota = 0;
+
+    for (num nota in listaDeNotas) {
+      totalNota += nota;
+    }
+
+    num media = totalNota / listaDeNotas.length;
+
+    String resultado = '';
+
+    if (media >= 7.0) {
+      resultado = 'aprovado';
+    } else {
+      resultado = 'reprovado';
+    }
+
+    return 'Media $media, aluno foi $resultado';
   }
 
   String desafio10() {
@@ -107,7 +125,24 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String desafio18() {
-    return '';
+    String palavra = 'eu';
+    String frase =
+        'Eu posso posso eu eu tudo o mais que eu quiser Eu, eu, eu Eu.';
+
+    int quantidade = 0;
+
+    List listaDePalavras = frase.split(' ');
+
+    for (String palavraLista in listaDePalavras) {
+      palavraLista = palavraLista.replaceAll(',', '');
+      palavraLista = palavraLista.replaceAll('.', '');
+
+      if (palavraLista.toLowerCase() == palavra.toLowerCase()) {
+        quantidade += 1;
+      }
+    }
+
+    return quantidade.toString();
   }
 
   String desafio19() {
