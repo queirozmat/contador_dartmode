@@ -185,7 +185,20 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String desafio13() {
-    return '';
+     List<int> numeros = [2, 5, 8, 10, 13, 17, 20, 22, 25, 30];
+
+    int pares = 0;
+    int impares = 0;
+
+    for (int item in numeros) {
+      if (item % 2 == 0) {
+        pares = pares + 1;
+      } else {
+        impares++;
+      }
+    }
+    return 'Quantidade de números pares: ${pares.toString()}\nQuantidade de números ímpares: ${impares.toString()}';
+
   }
 
   String desafio14() {
@@ -227,7 +240,27 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String desafio17() {
-    return '';
+    int numeroTeste = 30;
+  
+  if(numeroTeste == 1) {return 'É número primo';}
+  
+  List<int> listaDeDivisores = List.generate(numeroTeste - 1,
+                                             (index) => index + 2);
+  
+  int divisoesInteiras = 0;
+  
+  for(int numero in listaDeDivisores) {
+    if (numeroTeste % numero == 0) {
+        divisoesInteiras++;
+     }
+  }
+  
+  if(divisoesInteiras == 1) {
+    return 'É número primo';
+  } else {
+    return 'Não é número primo';
+  }
+
   }
 
   String desafio18() {
