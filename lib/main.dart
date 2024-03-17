@@ -497,6 +497,21 @@ class _MyHomePageState extends State<MyHomePage> {
     'desafio2',
     'desafio3',
     'desafio4',
+    'desafio5',
+    'desafio6',
+    'desafio7',
+    'desafio8',
+    'desafio9',
+    'desafio10',
+    'desafio11',
+    'desafio12',
+    'desafio13',
+    'desafio14',
+    'desafio15',
+    'desafio16',
+    'desafio17',
+    'desafio18',
+    'desafio19',
   ];
   String selectedFunction = '';
 
@@ -568,12 +583,51 @@ class _MyHomePageState extends State<MyHomePage> {
               resultado = desafio4();
               break;
 
+            case 'desafio5':
+              resultado = desafio5();
+              break;
+
+            case 'desafio6':
+              resultado = desafio6();
+              break;
+            case 'desafio7':
+              resultado = desafio7();
+              break;
+            case 'desafio8':
+              resultado = desafio8();
+              break;
+            case 'desafio9':
+              resultado = desafio9();
+              break;
+            case 'desafio10':
+              resultado = desafio10();
+              break;
+            case 'desafio11':
+              resultado = desafio11();
+              break;
+            case 'desafio12':
+              resultado = desafio12();
+              break;
+            case 'desafio13':
+              resultado = desafio13();
+              break;
+            case 'desafio14':
+              resultado = desafio14();
+              break;
+            case 'desafio15':
+              resultado = desafio15();
+              break;
             case 'desafio16':
               resultado = desafio16();
               break;
-
-            case 'desafio7':
-              resultado = desafio7();
+            case 'desafio17':
+              resultado = desafio17();
+              break;
+            case 'desafio18':
+              resultado = desafio18();
+              break;
+            case 'desafio19':
+              resultado = desafio19();
               break;
           }
 
