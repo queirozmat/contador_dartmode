@@ -530,6 +530,7 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               const SizedBox(height: 150),
               DropdownButton(
+                hint: const Text('Selecione o desafio'),
                 value: selectedFunction == '' ? null : selectedFunction,
                 items: listItens
                     .map((e) => DropdownMenuItem(
