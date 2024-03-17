@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'DartMode',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.grey),
         buttonTheme: const ButtonThemeData(buttonColor: Colors.grey),
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
             FloatingActionButtonThemeData(backgroundColor: Colors.grey[350]),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Contador - Dartmode'),
+      home: const MyHomePage(title: 'DartMode'),
     );
   }
 }
@@ -38,8 +38,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   //Parametros talvez vão ser implementados
   String desafio1() {
-    int a = 15;
-    int b = 8;
+    int a = 25;
+    int b = 25;
 
     if (a > b) {
       return 'O maior valor é: $a';
@@ -126,13 +126,14 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String desafio6() {
-    int numero = 10;
+   int numero = 10;
     int antecessor = numero - 1;
     int sucessor = numero + 1;
     String resultado =("O antecessor é  de $numero é $antecessor e o sucessor é $sucessor");
 
     return resultado;
   }
+
   String desafio7() {
     int salario_min = 1412;
     double salario_usuario = 3690.50;
@@ -184,7 +185,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return 'Media $media, aluno foi $resultado';
   }
 
-  String _desafio10() {
+  String desafio10() {
     String nome = 'Wilmar';
     int idade = 3;
     if (idade >= 18) {
@@ -206,7 +207,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return resultado;
   }
 
-  String _desafio12() {
+  String desafio12() {
     List<int> numeros = [1, 2, 3];
     for (int i = 0; i < numeros.length; i++) {
       numeros[i] = numeros[i] * numeros[i];
@@ -215,7 +216,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String desafio13() {
-     List<int> numeros = [2, 5, 8, 10, 13, 17, 20, 22, 25, 30];
+    List<int> numeros = [2, 5, 8, 10, 13, 17, 20, 22, 25, 30];
 
     int pares = 0;
     int impares = 0;
@@ -228,7 +229,6 @@ class _MyHomePageState extends State<MyHomePage> {
       }
     }
     return 'Quantidade de números pares: ${pares.toString()}\nQuantidade de números ímpares: ${impares.toString()}';
-
   }
 
   String desafio14() {
@@ -339,26 +339,27 @@ class _MyHomePageState extends State<MyHomePage> {
 
   String desafio17() {
     int numeroTeste = 30;
-  
-  if(numeroTeste == 1) {return 'É número primo';}
-  
-  List<int> listaDeDivisores = List.generate(numeroTeste - 1,
-                                             (index) => index + 2);
-  
-  int divisoesInteiras = 0;
-  
-  for(int numero in listaDeDivisores) {
-    if (numeroTeste % numero == 0) {
-        divisoesInteiras++;
-     }
-  }
-  
-  if(divisoesInteiras == 1) {
-    return 'É número primo';
-  } else {
-    return 'Não é número primo';
-  }
 
+    if (numeroTeste == 1) {
+      return 'É número primo';
+    }
+
+    List<int> listaDeDivisores =
+        List.generate(numeroTeste - 1, (index) => index + 2);
+
+    int divisoesInteiras = 0;
+
+    for (int numero in listaDeDivisores) {
+      if (numeroTeste % numero == 0) {
+        divisoesInteiras++;
+      }
+    }
+
+    if (divisoesInteiras == 1) {
+      return 'É número primo';
+    } else {
+      return 'Não é número primo';
+    }
   }
 
   String desafio18() {
@@ -383,7 +384,51 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String desafio19() {
-    return '';
+    List<String> palavras = [
+      "foR",
+      "scream",
+      "CaRs",
+      "raTo",
+      "PoTatos",
+      "racs",
+      "creams",
+      "scar",
+      "Tora",
+      "TatosPo",
+      "TosTaPo"
+    ];
+    // Mapa para armazenar os grupos de anagramas, onde a chave é a representação ordenada dos caracteres
+    // e o valor é uma lista de palavras que têm os mesmos caracteres quando normalizadas dessa maneira
+    Map<String, List<String>> grupos = {};
+
+    // Função interna para verificar se duas palavras são anagramas uma da outra
+    bool saoAnagramas(String palavra1, String palavra2) {
+      List<String> sorted1 = palavra1.toLowerCase().split('')..sort();
+      List<String> sorted2 = palavra2.toLowerCase().split('')..sort();
+      return sorted1.join() == sorted2.join();
+    }
+
+    // Itera sobre cada palavra na lista de palavras
+    for (String palavra in palavras) {
+      bool adicionou = false;
+      // Verifica se a palavra pertence a algum grupo existente
+      for (String chave in grupos.keys) {
+        if (saoAnagramas(chave, palavra)) {
+          // Se a palavra for um anagrama do grupo existente
+          grupos[chave]!
+              .add(palavra); // Adiciona a palavra ao grupo correspondente
+          adicionou = true; // Define a flag de adição como verdadeira
+          break; // Sai do loop interno, já que a palavra foi adicionada ao grupo
+        }
+      }
+      // Se a palavra não pertencer a nenhum grupo existente, cria um novo grupo para ela
+      if (adicionou == false) {
+        grupos[palavra] = [palavra];
+      }
+    }
+
+    // Retorna apenas os valores (grupos) do mapa como uma lista
+    return "Grupos de Anagramas: ${grupos.values.toList().toString()}";
   }
 
   bool _d19comparaMesmasLetras(String principal, String secundaria) {
@@ -404,36 +449,70 @@ class _MyHomePageState extends State<MyHomePage> {
     return contem;
   }
 
-  void _d19listaStrings(List<String> lista) {
-    setState(() {
-      List<List<String>> novaLista = [];
-      List<String> copiaLista = [];
-      List<bool> stringUsada = List.filled(lista.length, true);
-      bool comparou = true;
+  String _d19listaStrings() {
+    List<String> lista = [
+      'foR',
+      'scream',
+      'CaRs',
+      'poTatos',
+      'racs',
+      'creams',
+      'scar',
+      'four'
+    ];
 
-      copiaLista = List.from(lista);
-      for (int i = 0; i < lista.length; i++) {
-        //
-        if (stringUsada[i] == true) {
-          novaLista.add([]);
-          List<String> novaSubLista = novaLista.last;
-          novaSubLista.add(lista[i]);
-          stringUsada[i] = false;
+    List<List<String>> novaLista = [];
+    List<String> copiaLista = [];
+    List<bool> stringUsada = List.filled(lista.length, true);
+    bool comparou = true;
 
-          for (int j = 0; j < copiaLista.length; j++) {
-            if (stringUsada[j] == true) {
-              comparou = _d19comparaMesmasLetras(lista[i], copiaLista[j]);
-              if (comparou) {
-                novaSubLista.add(copiaLista[j]);
-                stringUsada[j] = false;
-              }
+    copiaLista = List.from(lista);
+    for (int i = 0; i < lista.length; i++) {
+      //
+      if (stringUsada[i] == true) {
+        novaLista.add([]);
+        List<String> novaSubLista = novaLista.last;
+        novaSubLista.add(lista[i]);
+        stringUsada[i] = false;
+
+        for (int j = 0; j < copiaLista.length; j++) {
+          if (stringUsada[j] == true) {
+            comparou = _d19comparaMesmasLetras(lista[i], copiaLista[j]);
+            if (comparou) {
+              novaSubLista.add(copiaLista[j]);
+              stringUsada[j] = false;
             }
           }
         }
       }
-      resultado = novaLista.map((sublist) => sublist.join('.')).join(', ');
-    });
+    }
+    var resultado = novaLista.map((sublist) => sublist.join('.')).join(', ');
+
+    return resultado.toString();
   }
+
+  List<String> listItens = [
+    'desafio1',
+    'desafio2',
+    'desafio3',
+    'desafio4',
+    'desafio5',
+    'desafio6',
+    'desafio7',
+    'desafio8',
+    'desafio9',
+    'desafio10',
+    'desafio11',
+    'desafio12',
+    'desafio13',
+    'desafio14',
+    'desafio15',
+    'desafio16',
+    'desafio17',
+    'desafio18',
+    'desafio19',
+  ];
+  String selectedFunction = '';
 
   @override
   Widget build(BuildContext context) {
@@ -443,38 +522,115 @@ class _MyHomePageState extends State<MyHomePage> {
         foregroundColor: Colors.white,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Resultado:',
-              style: TextStyle(fontStyle: FontStyle.italic, fontSize: 17),
-            ),
-            Text(
-              resultado,
-              style: const TextStyle(fontStyle: FontStyle.italic, fontSize: 40),
-            ),
-          ],
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: <Widget>[
+              const SizedBox(height: 150),
+              DropdownButton(
+                value: selectedFunction == '' ? null : selectedFunction,
+                items: listItens
+                    .map((e) => DropdownMenuItem(
+                          value: e,
+                          child: Text(e),
+                        ))
+                    .toList(),
+                onChanged: (value) {
+                  resultado = '';
+                  selectedFunction = value ?? '';
+                  setState(() {});
+                },
+              ),
+              const SizedBox(height: 150),
+              Column(
+                children: [
+                  const Text(
+                    'Resultado:',
+                    style: TextStyle(fontStyle: FontStyle.italic, fontSize: 17),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Text(
+                      resultado,
+                      style: const TextStyle(
+                          fontStyle: FontStyle.italic, fontSize: 30),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           //Aqui vai chamar função
-          setState(() {
-            //resultado = _desafio10();
-            //resultado = _desafio12();
-            /* _d19listaStrings([
-            'foR',
-            'scream',
-            'CaRs',
-            'poTatos',
-            'racs',
-            'creams',
-            'scar',
-            'four'
-          ]); */
-          });
+          switch (selectedFunction) {
+            case 'desafio1':
+              resultado = desafio1();
+              break;
+
+            case 'desafio2':
+              resultado = desafio2();
+              break;
+
+            case 'desafio3':
+              resultado = desafio3();
+              break;
+
+            case 'desafio4':
+              resultado = desafio4();
+              break;
+
+            case 'desafio5':
+              resultado = desafio5();
+              break;
+
+            case 'desafio6':
+              resultado = desafio6();
+              break;
+            case 'desafio7':
+              resultado = desafio7();
+              break;
+            case 'desafio8':
+              resultado = desafio8();
+              break;
+            case 'desafio9':
+              resultado = desafio9();
+              break;
+            case 'desafio10':
+              resultado = desafio10();
+              break;
+            case 'desafio11':
+              resultado = desafio11();
+              break;
+            case 'desafio12':
+              resultado = desafio12();
+              break;
+            case 'desafio13':
+              resultado = desafio13();
+              break;
+            case 'desafio14':
+              resultado = desafio14();
+              break;
+            case 'desafio15':
+              resultado = desafio15();
+              break;
+            case 'desafio16':
+              resultado = desafio16();
+              break;
+            case 'desafio17':
+              resultado = desafio17();
+              break;
+            case 'desafio18':
+              resultado = desafio18();
+              break;
+            case 'desafio19':
+              resultado = desafio19();
+              break;
+          }
+
+          setState(() {});
         },
         tooltip: 'Incrementar',
         child: const Icon(Icons.add_circle_sharp),
