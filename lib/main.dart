@@ -498,7 +498,7 @@ class _MyHomePageState extends State<MyHomePage> {
     'desafio3',
     'desafio4',
   ];
-  String selectFuncion = '';
+  String selectedFunction = '';
 
   @override
   Widget build(BuildContext context) {
@@ -514,7 +514,7 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               const SizedBox(height: 150),
               DropdownButton(
-                value: selectFuncion == '' ? null : selectFuncion,
+                value: selectedFunction == '' ? null : selectedFunction,
                 items: listItens
                     .map((e) => DropdownMenuItem(
                           value: e,
@@ -523,7 +523,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     .toList(),
                 onChanged: (value) {
                   resultado = '';
-                  selectFuncion = value ?? '';
+                  selectedFunction = value ?? '';
                   setState(() {});
                 },
               ),
@@ -551,7 +551,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           //Aqui vai chamar função
-          switch (selectFuncion) {
+          switch (selectedFunction) {
             case 'desafio1':
               resultado = desafio1();
               break;
