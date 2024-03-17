@@ -512,6 +512,7 @@ class _MyHomePageState extends State<MyHomePage> {
     'desafio17',
     'desafio18',
     'desafio19',
+    'desafio19v2',
   ];
   String selectedFunction = '';
 
@@ -628,6 +629,10 @@ class _MyHomePageState extends State<MyHomePage> {
               break;
             case 'desafio19':
               resultado = desafio19();
+              break;
+
+            case 'desafio19v2':
+              resultado = _d19listaStrings();
               break;
           }
 
