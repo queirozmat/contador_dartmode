@@ -38,8 +38,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   //Parametros talvez vão ser implementados
   String desafio1() {
-    int a = 25;
-    int b = 25;
+    int a = 26;
+    int b = 27;
 
     if (a > b) {
       return 'O maior valor é: $a';
@@ -51,9 +51,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String desafio2() {
-    int a = 8;
-    int b = 5;
-    int c = 27;
+    int a = 14;
+    int b = 14;
+    int c = 28;
 
     int soma = a + b;
 
@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String desafio4() {
-    int a = -5;
+    int a = 10;
     String resultado = "";
 
     if (a % 2 == 0) {
@@ -114,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
       }
     }
 
-    var resultado = compara_numeros(3, 2);
+    var resultado = compara_numeros(3, 3);
 
     if (numeros_iguais) {
       return "Os números eram iguais, portanto você fez uma soma, o resultado é: " +
@@ -126,18 +126,18 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String desafio6() {
-    int numero = 10;
+    int numero = 7;
     int antecessor = numero - 1;
     int sucessor = numero + 1;
     String resultado =
-        ("O antecessor é  de $numero é $antecessor e o sucessor é $sucessor");
+        ("O antecessor de $numero é $antecessor e o sucessor é $sucessor");
 
     return resultado;
   }
 
   String desafio7() {
     int salario_min = 1412;
-    double salario_usuario = 3690.50;
+    double salario_usuario = 2824.00;
 
     double compara_salario(usuario, minimo) {
       return usuario / minimo;
@@ -150,7 +150,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String desafio8() {
-    List<int> valores = [5, 6, 1];
+    List<int> valores = [5, -6, 1];
     for (var i = 0; i < valores.length; i++) {
       for (var j = i + 1; j < valores.length; j++) {
         if (valores[i] < valores[j]) {
@@ -165,7 +165,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String desafio9() {
-    List listaDeNotas = [80, 70, 60, 75, 40];
+    List listaDeNotas = [80, 70, 60, 75, 70, 95, 100];
 
     num totalNota = 0;
 
@@ -177,7 +177,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     String resultado = '';
 
-    if (media >= 7.0) {
+    if (media >= 70.0) {
       resultado = 'aprovado';
     } else {
       resultado = 'reprovado';
@@ -188,7 +188,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   String desafio10() {
     String nome = 'Wilmar';
-    int idade = 3;
+    int idade = 18;
     if (idade >= 18) {
       return '$nome é maior de idade';
     } else {
@@ -197,7 +197,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String desafio11() {
-    int numero = 10;
+    int numero = 5;
     var tabuada = [];
 
     for (int i = 1; i <= 10; i++) {
@@ -209,7 +209,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String desafio12() {
-    List<int> numeros = [1, 2, 3];
+    List<int> numeros = [1, 2, 4];
     for (int i = 0; i < numeros.length; i++) {
       numeros[i] = numeros[i] * numeros[i];
     }
@@ -233,7 +233,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String desafio14() {
-    List<int> numeros = [20, 1, 5, 23, 12, 8, 15, 10, 7, 18];
+    List<int> numeros = [20, 100, 5, -23, 12, 8, 15, 10, 7, 18];
     int min = numeros[0];
     int max = numeros[0];
 
@@ -250,7 +250,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String desafio15() {
-    int limite = -3;
+    int limite = -10;
     List<int> lista = [];
 
     if (limite > 0) {
@@ -261,6 +261,7 @@ class _MyHomePageState extends State<MyHomePage> {
       for (int i = 0; i >= limite;) {
         lista.add(i--);
       }
+      lista = lista.reversed.toList();
     }
 
     return lista.toString();
@@ -310,17 +311,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String desafio16() {
-    var tests = [
-      'Ana',
-      'ABBA',
-      'Anotaram a data da maratona',
-      'Anotaram a data 20/12 da maratona',
-      'Caneco',
-      'Xucrinho',
-      'A Rita sobre vovô verbos atira',
-      'Uma frase',
-      'Se hidrate',
-    ];
+    var tests = ['baba', 'oi', 'reviver'];
 
     List<String> resultados = [];
 
@@ -392,6 +383,7 @@ class _MyHomePageState extends State<MyHomePage> {
       "raTo",
       "PoTatos",
       "racs",
+      "roF",
       "creams",
       "scar",
       "Tora",
